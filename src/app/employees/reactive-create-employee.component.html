@@ -1,0 +1,40 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" novalidate>
+  <p>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" formControlName="name">
+  </p>
+
+  <p>
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" formControlName="gender">
+    <option *ngFor="let g of gender" value="g">{{g}}</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="preference">preference : </label>
+    <input type="radio" id="preference" name="preference" value="email" formControlName="preference">email 
+    <input type="radio" id="preference" formControlName="preference" name="preference" value="phone">phone
+  </p>
+
+  <div formGroupName="address">
+    <p>
+      <label for="line1">line1</label>
+      <input type="text" id="line1" name="line1" formControlName="line1">
+    </p>
+
+    <p>
+      <label for="zip">zip</label>
+      <input type="number" id="zip" name="zip" formControlName="zip">
+    </p>
+  </div>
+  <p>
+    <button type="submit" [disabled]="!employeeForm.valid">Submit </button>
+  </p>
+
+
+</form>
+
+<!-- <div *ngIf="!name">
+  Fill Name Field 
+</div> -->

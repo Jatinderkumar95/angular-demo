@@ -1,0 +1,58 @@
+<div class="panel panel-primary" (click)="handleClick()">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <a [routerLink]="['/update',employee.id]"> {{employee.name}}</a>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10">
+      <div class="row vertical-align">
+        <div class="col-xs-4">
+          <img class="imageClass" [src]="employee.photoPath">
+        </div>
+        <div class="col-xs-8">
+
+          <div class="row">
+            <div class="col-xs-6">Gender</div>
+            <div class="col-xs-6">: {{employee.gender | slice:-0:-3}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">Contact Preference</div>
+            <div class="col-xs-6">: {{employee.contactPreference}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">Date of birth </div>
+            <div class="col-xs-6">: {{employee.dateOfBirth | date:'fullDate'}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">Department</div>
+            <div class="col-xs-6">: {{employee.department}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">Email</div>
+            <div class="col-xs-6">: {{employee.email}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">phone Number</div>
+            <div class="col-xs-6">: {{employee.phoneNumber | number:'2.1-5'}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">phone Number in percentage</div>
+            <div class="col-xs-6">: {{employee.phoneNumber | percent:'2.1-5'}}</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">Salary</div>
+            <div class="col-xs-6">: {{5000.230 | currency:'INR':true:'2.1-5'}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

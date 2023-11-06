@@ -1,0 +1,9 @@
+<!-- <button (click)="nextEmployee()" class="btn btn-primary">View Next Employee</button>
+<h3 *ngIf="currentEmployeeName">Current Name : {{currentEmployeeName | testPipe}}</h3> -->
+<input type="text" [(ngModel)]="searchBy" placeholder="Enter name" (onModelChange)="modelChange($event)">
+<br/>
+<br/>
+<div  *ngFor="let employee of employees | filter:searchBy"> 
+  <!-- | slice:0:1 -->
+  <app-display-employee [employee]="employee" (notify)="handleNotification($event)"></app-display-employee>
+</div>
