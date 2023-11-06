@@ -32,6 +32,7 @@
     <button type="submit" [disabled]="!employeeForm.valid">Submit </button>
   </p>
 
+  <app-upload-file (onUploadFinished)="imageUploaded()"></app-upload-file>
 
 </form>
 

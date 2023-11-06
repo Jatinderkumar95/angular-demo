@@ -22,6 +22,7 @@ import { StakeholderDashboardModule } from './stakeholder-dashboard/stakeholder-
 import { AuthGuardService } from './services/auth-guard.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { ReactiveCreateEmployeeComponent } from './employees/reactive-create-employee.component';
+import { UploadFileComponent } from './files/upload-file.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import { ReactiveCreateEmployeeComponent } from './employees/reactive-create-emp
     FilterArrayPipe,
     UpdateEmployeeComponent,
     ErrorComponent,
-    ReactiveCreateEmployeeComponent
+    ReactiveCreateEmployeeComponent,
+    UploadFileComponent
   ],
   providers:[
     HttpService,

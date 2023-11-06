@@ -3,6 +3,7 @@ import { Employee } from '../models/employee.model';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { map, pipe } from 'rxjs';
+import { gte } from '../validators/gte.validator';
 
 @Component({
   selector: 'app-reactive-create-employee',
@@ -21,11 +22,11 @@ export class ReactiveCreateEmployeeComponent implements OnInit {
   employeeForm: FormGroup = new FormGroup({
     name: new FormControl('',[Validators.required,Validators.minLength(10)]),
     gender: new FormControl('',[Validators.required]), 
-    //  new FormControl({value: 'Rahul', disabled: true}),
+    //  new FormControl({value: 'Rahul', disabled: true},[Validators.required,gte]),
     preference: new FormControl(),
     // birthDate: new FormControl(),
     // department: new FormControl(),
-    // image: new FormControl(),
+     image: new FormControl(),
     // phn: new FormControl(),
     // email: new FormControl(),
     address: new FormGroup({
@@ -48,6 +49,8 @@ export class ReactiveCreateEmployeeComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.employeeForm);
+
+
   }
   populateGender(): void {
     this.http.get('https://jsonplaceholder.typicode.com/todos/1').pipe(map(
@@ -64,6 +67,10 @@ export class ReactiveCreateEmployeeComponent implements OnInit {
 
   get name() {
 return this.employeeForm.get('name');
+  }
+
+  imageUploaded() : void{
+    
   }
 }
 
