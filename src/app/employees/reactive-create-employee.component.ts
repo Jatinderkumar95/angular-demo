@@ -63,7 +63,7 @@ export class ReactiveCreateEmployeeComponent implements OnInit {
   }
 
   get name() {
-return this.employeeForm.controls['name'];
+return this.employeeForm.get('name');
   }
 }
 

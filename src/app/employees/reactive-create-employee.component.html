@@ -35,6 +35,9 @@
 
 </form>
 
-<!-- <div *ngIf="!name">
+<div *ngIf="name && (name.dirty || name.touched)">
+  <div [hidden]="!name.errors">
+required
+  </div>
   Fill Name Field 
-</div> -->
+</div>
